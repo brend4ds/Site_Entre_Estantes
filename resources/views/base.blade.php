@@ -9,7 +9,7 @@
        <hr>
         <a href="{{ route('index') }}">Inicial</a>
         |
-        <a href="{{ route('animais') }}">Animais</a>
+        <a href="{{ route('livros') }}">Livros</a>
         |
         @if(Auth::user() && Auth::user()['admin'])
         <a href="{{ route('usuarios') }}">Usuários</a>

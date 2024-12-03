@@ -12,7 +12,7 @@
 
 <table border="1">
     <tr>
-        <th>Nome</th>
+        <th>Nome do Livro</th>
     </tr>
 
     @foreach($desejos as $desejo)
