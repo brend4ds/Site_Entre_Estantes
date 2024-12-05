@@ -4,7 +4,7 @@ use App\Http\Controllers\AvaliacaoController;
 use App\Http\Controllers\DesejoController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\LivroController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -26,8 +26,8 @@ Route::get('avaliacoes', [AvaliacaoController::class, 'index'])->name('avaliacoe
 
 //Login
 
-Route::get('login', [UserController::class,'login'])->name('login');
-Route::post('login', [UserController::class,'login']);
+Route::get('login', [UsuariosController::class,'login'])->name('login');
+Route::post('login', [UsuariosController::class,'login']);
 
 //Logout
-Route::get('logout', [UserController::class, 'logout'])->name('logout');
+Route::get('logout', [UsuariosController::class, 'logout'])->name('logout');
