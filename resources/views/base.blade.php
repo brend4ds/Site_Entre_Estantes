@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Admin Template</title>
+    <title>Entre Estantes</title>
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
@@ -12,52 +12,44 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
         .font-family-karla { font-family: karla; }
-        .bg-sidebar { background: #3d68ff; }
+        .bg-sidebar { background: #92a092; } //lateral
         .cta-btn { color: #3d68ff; }
-        .upgrade-btn { background: #1947ee; }
-        .upgrade-btn:hover { background: #0038fd; }
         .active-nav-link { background: #1947ee; }
-        .nav-item:hover { background: #1947ee; }
+        .nav-item:hover { background: #687b68; }
         .account-link:hover { background: #3d68ff; }
     </style>
 </head>
-<body class="bg-gray-100 font-family-karla flex">
+<body style="background-color: #f5f0e4;" class="font-family-karla flex">
 
     <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
         <div class="p-6">
-            <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
+            <a href="{{ route ('index') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Entre Estantes</a>
         </div>
         <nav class="text-white text-base font-semibold pt-3">
-            <a href="index.html" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+            {{-- <a href="index.html" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
                 <i class="fas fa-tachometer-alt mr-3"></i>
-                Dashboard
+                Início
+            </a> --}}
+
+            {{-- Inicial --}}
+            <a href="{{ route ('index') }}" class="flex items-center text-white  py-4 pl-6 nav-item
+            @if(Request::is('usuarios*'))active-nav-link @else opacity-75 hover:opacity-100 @endif">
+                <i class="fas fa-home mr-3"></i>
+                Inicial
             </a>
-            <a href="blank.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            
+            {{-- Livros --}}
+            <a href="{{ route ('livros')}}" class="flex items-center text-white py-4 pl-6 nav-item 
+                @if(Request::is('livros*'))active-nav-link @else opacity-75 hover:opacity-100 @endif">
                 <i class="fas fa-sticky-note mr-3"></i>
-                Blank Page
-            </a>
-            <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-                <i class="fas fa-table mr-3"></i>
-                Tables
-            </a>
-            <a href="forms.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-                <i class="fas fa-align-left mr-3"></i>
-                Forms
-            </a>
-            <a href="tabs.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-                <i class="fas fa-tablet-alt mr-3"></i>
-                Tabbed Content
-            </a>
-            <a href="calendar.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-                <i class="fas fa-calendar mr-3"></i>
-                Calendar
+                Feed
             </a>
         </nav>
     </aside>
 
     <div class="w-full flex flex-col h-screen overflow-y-hidden">
         <!-- Desktop Header -->
-        <header class="w-full items-center bg-white py-2 px-6 hidden sm:flex">
+        <header style="background-color:#8c6039;" class="w-full items-center py-2 px-6 hidden sm:flex">
             <div class="w-1/2"></div>
             <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end">
                 

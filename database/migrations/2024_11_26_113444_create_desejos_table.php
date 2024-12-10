@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('desejos', function (Blueprint $table) {
             $table->id();
-            $table->usuario_id();
-            $table->livro_id();
+            $table->foreignId('usuario_id');
+            $table->foreignId('livro_id');
             $table->timestamps();
         });
     }

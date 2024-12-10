@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('avaliacoes', function (Blueprint $table) {
             // id, usuario_id, livro_id, nota, comentario, data_avaliacao
             $table->id();
-            $table->usuario_id();
-            $table->livro_id();
+            $table->foreignId('usuario_id');
+            $table->foreignId('livro_id');
             $table->smallInteger('nota');
             $table->string('comentario');
             $table->date('data_avaliacao');
